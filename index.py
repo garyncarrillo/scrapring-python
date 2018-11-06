@@ -1,10 +1,4 @@
 
-# PATH="$HOME/Library/Python/2.7/bin/:$PATH"
-#   scrapy runspider index.py -o out.json
-# scrapy shell
-# https://www.analyticsvidhya.com/blog/2017/07/web-scraping-in-python-using-scrapy/
-
-# PATH="$HOME/Library/Python/2.7/bin/:$PATH"
 
 from scrapy import Field, Spider, Item, Selector
 
