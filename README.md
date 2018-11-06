@@ -9,3 +9,14 @@
 #    from OpenSSL._util import lib as pyOpenSSLlib
 #    ImportError: No module named _util
 #    se debe actualizar pyopenssl con el comando sudo pip install pyopenssl --user --upgrade
+
+
+Ejemplo:
+
+PATH="$HOME/Library/Python/2.7/bin/:$PATH"
+scrapy runspider index.py -o out.json
+
+
+
+Nota: Puedes usar el shell para comprension de la lectura del scraping
+# scrapy shell
