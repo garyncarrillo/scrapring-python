@@ -189,14 +189,14 @@ def get_menu_principal(request):
     return JsonResponse(jsondata)
 
 def get_menu_planes(request):
-    data_informacion = mprincipal.objects.all()
+    data_planes = Planesobjects.all()
     text = None
-    for i in data_informacion.values():
+    for i in data_planes.values():
         if text is None:
           text=''
-          text=text+' { "titulo": "'+i['titulo'].replace('\n', ' ').replace('\r', '') +'" , "url": "'+i['url'].replace('\n', ' ').replace('\r', '') +'"} '
+          text=text+' { "titulo": "'+i['titulo'].replace('\n', ' ').replace('\r', '') +'" , "informacion": "'+i['informacion'].replace('\n', ' ').replace('\r', '') +'"} '
         else:
-           text=text+' , { "titulo": "'+i['titulo'].replace('\n', ' ').replace('\r', '') +'" , "url": "'+i['url'].replace('\n', ' ').replace('\r', '') +'"} '
+           text=text+' , { "informacion": "'+i['informacion'].replace('\n', ' ').replace('\r', '') +'" , "informacion": "'+i['informacion'].replace('\n', ' ').replace('\r', '') +'"} '
     
     text = '{ "json":['+text+'] }'
     print text 
