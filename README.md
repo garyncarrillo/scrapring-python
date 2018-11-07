@@ -5,7 +5,7 @@
 # 4- ubicarse en la carpeta donde esta el proyecto haciendo uso del comando cd /
 # 5- Ejecutar el proyecto con el siguiente comando 
 #    scrapy runspider index.py -o scraped_data.json
-#    nota: en casao de presentar el error 
+#    nota: en caso de presentar el error 
 #    from OpenSSL._util import lib as pyOpenSSLlib
 #    ImportError: No module named _util
 #    se debe actualizar pyopenssl con el comando sudo pip install pyopenssl --user --upgrade
