@@ -29,4 +29,5 @@ urlpatterns = [
     url(r'^index/', wmenu.get_index),
     url(r'^jcabeceras/', wmenu.get_cabeceras),
     url(r'^jpmenu/', wmenu.get_menu_principal),
+    url(r'^jpmenu/', wmenu.get_menu_planes),
 ]

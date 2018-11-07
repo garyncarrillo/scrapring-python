@@ -187,3 +187,18 @@ def get_menu_principal(request):
     print text 
     jsondata = json.loads(text)
     return JsonResponse(jsondata)
+
+def get_menu_planes(request):
+    data_informacion = mprincipal.objects.all()
+    text = None
+    for i in data_informacion.values():
+        if text is None:
+          text=''
+          text=text+' { "titulo": "'+i['titulo'].replace('\n', ' ').replace('\r', '') +'" , "url": "'+i['url'].replace('\n', ' ').replace('\r', '') +'"} '
+        else:
+           text=text+' , { "titulo": "'+i['titulo'].replace('\n', ' ').replace('\r', '') +'" , "url": "'+i['url'].replace('\n', ' ').replace('\r', '') +'"} '
+    
+    text = '{ "json":['+text+'] }'
+    print text 
+    jsondata = json.loads(text)
+    return JsonResponse(jsondata)
