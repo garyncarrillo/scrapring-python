@@ -177,13 +177,16 @@ h1{
 .contenido-publicidad{
 	font-family: 'arimo';
 	width:100%; 
-	height: 100%; 
+	height: 290%; 
 	float:left; 
 	position: absolute;  
 	top:80%; 
 	left:0%; 
 	background:#f4f4f4;
 }
+ .menu-publicidad{
+ 	height: 90%;
+ }
 
 .publicidad{
 	font-family: 'arimo';
@@ -213,10 +216,10 @@ h1{
 	float:left; 
 	position: absolute; 
 	background:white;  
-	top: 15%; 
+	/*top: 15%;*/
 	left: 35%; 
 	width: 30%; 
-	height: 70%; 
+	height: 15%; 
 	box-sizing: border-box;
 }
 
@@ -300,12 +303,20 @@ h1{
  	color: white;
  }
 
+
+
 /* 768 px */
 @media (max-width: 1200px){
 	.contenido-publicidad{
-		height: 140%; 
+		height: 290%; 
 	}
 
+	 .menu-publicidad{
+ 	   height: 100%;
+    }
+    .publicidad-tipos-planes{
+    	height: 20%;
+    }
 	.publicidad-tipos-planes ul li h9{
     	font-size: 12px;
     	text-align: justify;

@@ -101,20 +101,25 @@
 								type: 'get',
 								dataType: "json",
 								success: function(data, textStatus) {
-        var div="	<div class='publicidad-tipos-planes' ><ul > "
-	    div=div+"<li><h4 >Amateur</h4></li>"
-		div=div+"<li><h5 >De 0 a 1,000,0000 PV al mes</h5></li>	"
+									 var top = 3
+									 var i =0	
+									 while(data.json[i]){
+									 	
+        var div="	<div class='publicidad-tipos-planes' style='top:"+top+"%;'><ul > "
+	    div=div+"<li><h4 >"+data.json[i]['titulo']+"</h4></li>"
+		div=div+"<li><h5 >"+data.json[i]['sub_titulo']+"</h5></li>"
 		div=div+" <li style='list-style:disc;' ><h9 > Super velocidad de carga en nuestros servidores.</h9></li>"
 		div=div+" <li style='list-style:disc;' ><h9 > Super velocidad de carga en nuestros servidores.</h9></li>"	
-		div=div+" <li style='list-style:disc;' ><h9 > Super velocidad de carga en nuestros servidores.</h9></li>"
 		div=div+" <li style='list-style:disc;' ><h9 > Super velocidad de carga en nuestros servidores.</h9></li>"
 		div=div+" <li style='list-style:disc;' ><h9 > Super velocidad de carga en nuestros servidores.</h9></li>"
 		div = div+"<ul><li><a> </a></li></ul>"
 		div = div +"<div  class ='radial-out' style='padding: 0px; 1px;'>"
 	    div=div+"<ul><li> <a href='#'>Comprar</a></li></ul></div></div>"
-							
+	
 						       	  $('div .menu-publicidad').append(div)
-						      	
+						       	  top=top + 22;
+						       	  i=i+1
+							}		      	
 		                		},
 		                         error:function(data){
 		                             alert("Error: " + data);
@@ -176,10 +181,7 @@
 
 			   	<div class="menu-publicidad">
 
-				   	<div class="publicidad-tipos-planes" >
-					
-						
-				   	</div>
+				
 			   	</div>
 	 	</div>
 <body>
