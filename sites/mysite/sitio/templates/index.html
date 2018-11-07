@@ -30,6 +30,7 @@
 							get_Informacion();
 							get_Cabeceras();
 							get_menu_principal();
+							get_Planes();
 						}
 						function get_Informacion(){
 							$.ajax({
@@ -94,6 +95,34 @@
 							});
 						}
 
+						function get_Planes(){
+							$.ajax({
+								url: '/jplanes/',
+								type: 'get',
+								dataType: "json",
+								success: function(data, textStatus) {
+        var div="	<div class='publicidad-tipos-planes' ><ul > "
+	    div=div+"<li><h4 >Amateur</h4></li>"
+		div=div+"<li><h5 >De 0 a 1,000,0000 PV al mes</h5></li>	"
+		div=div+" <li style='list-style:disc;' ><h9 > Super velocidad de carga en nuestros servidores.</h9></li>"
+		div=div+" <li style='list-style:disc;' ><h9 > Super velocidad de carga en nuestros servidores.</h9></li>"	
+		div=div+" <li style='list-style:disc;' ><h9 > Super velocidad de carga en nuestros servidores.</h9></li>"
+		div=div+" <li style='list-style:disc;' ><h9 > Super velocidad de carga en nuestros servidores.</h9></li>"
+		div=div+" <li style='list-style:disc;' ><h9 > Super velocidad de carga en nuestros servidores.</h9></li>"
+		div = div+"<ul><li><a> </a></li></ul>"
+		div = div +"<div  class ='radial-out' style='padding: 0px; 1px;'>"
+	    div=div+"<ul><li> <a href='#'>Comprar</a></li></ul></div></div>"
+							
+						       	  $('div .menu-publicidad').append(div)
+						      	
+		                		},
+		                         error:function(data){
+		                             alert("Error: " + data);
+		                             
+		                         }
+							});
+						}
+
 				});
 
 				
@@ -145,43 +174,12 @@
 			   		</h1>
 			   	</div>
 
-			   	
+			   	<div class="menu-publicidad">
 
-			   	<div class="publicidad-tipos-planes" >
-						<ul >
-							<li>
-								<h4 >Amateur</h4>
-							</li>
-							<li>
-								<h5 >
-									De 0 a 1,000,0000 PV al mes
-								</h5>
-							</li>	
-							<li>
-								<h7>usd $</h7>
-								<h8 style="font-size: 60px;">300</h8>
-								<h6> x mes</h6>
-							</li>
-							<li style="list-style:disc;" >
-								<h9 "> Super velocidad de carga en nuestros servidores.</h9>
-							</li>
-							<li style="list-style:disc;" >
-								<h9 "> Super velocidad de carga en nuestros servidores.</h9>
-							</li>
-							<li style="list-style:disc;">
-								<h9 "> Super velocidad de carga en nuestros servidores.</h9>
-							</li>
-							<li style="list-style:disc;">
-								<h9 "> Super velocidad de carga en nuestros servidores.</h9>
-							</li>
-						</ul>
-
-						<div  class ="radial-out" style="padding: 0px; 1px;">
-								<ul>
-									<li> <a href="#">Comprar</a></li>
-								</ul>
-						</div>
+				   	<div class="publicidad-tipos-planes" >
 					
+						
+				   	</div>
 			   	</div>
 	 	</div>
 <body>
