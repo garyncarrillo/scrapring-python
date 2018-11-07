@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	   <title>Planes - Sindyk</title>
+	   <link type="image/x-icon" rel="shortcut icon" href="/static/img/logo-home-mobile-up.webp">
+	   <link type="text/css" rel="stylesheet" media="all" href="/static/css/menu.css">
+	    <script type="text/javascript" src="/static/js/jquery-3.3.1.js"></script>	
+    </head>
+
+	 <script type="text/javascript">
+
+	 			
+
+				$(document).ready(function(){
+					    //load_html
+						cargar();
+			
+     					$( ".submenu" ).click(function() {	
+							$(this).children("ul").slideToggle(); //Mostrar u ocultar el submenu
+						});
+
+
+     			
+						$( "#cerrar" ).click(function() {
+								$("#btn-menu").prop( "checked", false );
+						});
+
+						function cargar(){
+							get_Informacion();
+							get_Cabeceras();
+							get_menu_principal();
+						}
+						function get_Informacion(){
+							$.ajax({
+								url: '/jinformacion/',
+								type: 'get',
+								dataType: "json",
+								success: function(data, textStatus) {
+								  
+		                          var url_img="";
+		                          var texto="";
+		                          var i = 0;
+		                          while(data.json[i]){
+		                          	texto= texto+" "+data.json[i]["titulo"];
+		                          	url_img = data.json[i]["img"];
+		                          	i++;
+		                          }
+		                          $('#img_banner').attr('src', url_img);
+		                          $('#publicidad-text').text(texto);
+								},
+		                         error:function(data){
+		                             alert("Error: " + data);
+		                             
+		                         }
+							});
+						}
+						function get_Cabeceras(){
+							$.ajax({
+								url: '/jcabeceras/',
+								type: 'get',
+								dataType: "json",
+								success: function(data, textStatus) {
+						          var url_img= data.json["cabecera"];
+		                     	  var url_pie =	data.json["pie"];
+		                          $('#img-cabecera').attr('src', url_img);
+		                		},
+		                         error:function(data){
+		                             alert("Error: " + data);
+		                             
+		                         }
+							});
+						}
+
+						function get_menu_principal(){
+							$.ajax({
+								url: '/jpmenu/',
+								type: 'get',
+								dataType: "json",
+								success: function(data, textStatus) {
+						          var texto="";
+		                          var i = 0;
+		                          while(data.json[i]){
+		                          
+		        $('#menu_item').append("<li><a href='#''>"+data.json[i]["titulo"].toUpperCase()+"</a></li>");
+		                          	i++;
+		                          }
+		                          	
+		                		},
+		                         error:function(data){
+		                             alert("Error: " + data);
+		                             
+		                         }
+							});
+						}
+
+				});
+
+				
+	     
+
+	 </script>
+
+
+   		 <header>
+ 			 <div class="cabecera" style="">
+
+			    <div class="cabecera-logo-mobil" >
+			    	<label "><img id="img-cabecera" name ="img-cabecera"  height="75px"></label>
+			    </div>
+
+			    <div class= "cabecera-menu-mobil" style=""> 
+					<input type="checkbox" id="btn-menu" >
+					<label for="btn-menu" >
+							<img src="/static/img/menu-movil.png" width="30" height="25" viewBox="0 0 300 90" > 
+					</label>
+					 <nav class="menu" id="p_menu" name="p_menu">
+					 	<ul>
+					 		<li id="cerrar" name="cerrar">
+					 			<label><img src="/static/img/cerrar.png" style="width: 15px; height: 15px;"></label>
+					 		</li>
+					 	</ul>
+					 	<ul id ="menu_item" id ="menu_item" >
+					
+					 	</ul>
+					 </nav>
+				  </div>
+			  </div>
+  		</header>
+		
+		<div  class="banner-planes-mobil">
+			   		<img id="img_banner" name="img_banner"  width="100%" height="55%">
+			   		<div class="div-planes">
+			   				<h1 id="publicidad-text" name="publicidad-text" >
+			   		</h1>
+			   	</div>
+	 	</div>
+
+		<div  class="contenido-publicidad">
+
+
+			   	<div class="publicidad" >
+			   		<h1 >
+			   			Pago unico o setup de USD$ 500 por implementacion o activacion de sitio movil.
+			   		</h1>
+			   	</div>
+
+			   	
+
+			   	<div class="publicidad-tipos-planes" >
+						<ul >
+							<li>
+								<h4 >Amateur</h4>
+							</li>
+							<li>
+								<h5 >
+									De 0 a 1,000,0000 PV al mes
+								</h5>
+							</li>	
+							<li>
+								<h7>usd $</h7>
+								<h8 style="font-size: 60px;">300</h8>
+								<h6> x mes</h6>
+							</li>
+							<li style="list-style:disc;" >
+								<h9 "> Super velocidad de carga en nuestros servidores.</h9>
+							</li>
+							<li style="list-style:disc;" >
+								<h9 "> Super velocidad de carga en nuestros servidores.</h9>
+							</li>
+							<li style="list-style:disc;">
+								<h9 "> Super velocidad de carga en nuestros servidores.</h9>
+							</li>
+							<li style="list-style:disc;">
+								<h9 "> Super velocidad de carga en nuestros servidores.</h9>
+							</li>
+						</ul>
+
+						<div  class ="radial-out" style="padding: 0px; 1px;">
+								<ul>
+									<li> <a href="#">Comprar</a></li>
+								</ul>
+						</div>
+					
+			   	</div>
+	 	</div>
+<body>
+	
+
+</body>
+</html>

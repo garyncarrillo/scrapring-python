@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON- Scraping py</title>
+</head>
+<link rel="stylesheet" type="text/css" href="/static/css/style.css"  />
+<script type="text/javascript" src="/static/js/jquery-3.3.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+			
+			$(document).on('change', 'input[type=file]', function(e) {
+    			// Obtenemos la ruta temporal mediante el evento
+    			var TmpPath = URL.createObjectURL(e.target.files[0]);
+
+    			var adjunto = $( "#adjunto" ).val()
+  				 // Mostramos la ruta temporal
+  				open_file(TmpPath);
+            });
+
+			function open_file(TXT_URL){
+				$.ajax(
+				    	{
+				        	url : TXT_URL,
+				         	dataType: "text",
+							success : function (data) 
+							{
+				            	$(".text").html("<pre>"+data+"</pre>");
+				            	Llamado(data)
+							},
+	                         error:function(data){
+	                             alert("Error: " + data);
+	                             
+	                         }
+						}
+					);
+			}
+		
+
+
+			function Llamado(param_ruta){
+					var parametros = {
+						"ruta" : param_ruta
+					}
+
+					$.ajax({
+						data:parametros,
+						url: '/json/',
+						type: 'get',
+						dataType: "json",
+						success: function(data, textStatus) {
+							//alert(data);
+                          alert("Excelente : " + data);
+                           
+						},
+                         error:function(data){
+                             alert("Error: " + data);
+                             
+                         }
+					});
+	        }
+
+	        function leerArchivo(e) {
+				  var archivo = e.target.files[0];
+				  if (!archivo) {
+				    return;
+				  }
+				  var lector = new FileReader();
+				  lector.onload = function(e) {
+				    var contenido = e.target.result;
+				    alert(contenido);
+				  };
+				  lector.readAsText(archivo);
+			}
+
+
+	});
+	
+
+</script>
+
+
+
+<body>
+
+
+  <input type="file" name="adjunto" id="adjunto" accept=".json,.pdf" multiple>
+  <input type="submit" name="ejecutar"  id="ejecutar" value="Ejecutar">
+
+<div class="text">
+  <hr />
+  <h2>Texto:</h2>
+</div>
+</body>
+</html>

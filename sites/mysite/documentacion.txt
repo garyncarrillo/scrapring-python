@@ -1,0 +1,35 @@
+tutorial
+https://www.youtube.com/watch?v=qJAGgT70p6o&list=PLOPzQ1ldAVcUongZ7PT33JwjpeUfR-Xb2&index=3
+
+0 mapear la ruta en mi mac PATH="$HOME/Library/Python/2.7/bin/:$PATH"
+1-django-admin startproject mysite
+
+2- crear la apps dentro del proyecto
+django-admin startapp sitio
+
+3-luego se incluye en el sseting en la seccion INSTALLED_APPS la apps anterior creada
+para este caso fue "sitio"
+
+4-luego hacemos el diseño de nuestro modelos en el archivo models.py en el "sitio"
+
+
+5-Configuracion de la Base de datos 
+ingresar al archivo setting.py pero del proyecto "mysite" en la seccion de DATABASES
+configuramos nuestra base de datos
+
+
+
+5.1 python manage.py migrate
+5.2 crea el archivo de migration en la ruta /sitio/migrations/0001_initial.py
+    python manage.py makemigrations
+5.3 python manage.py migrate
+
+
+6. crear template
+6.1 dentro de la carpeta de la apps del proyecto "sitio" creamos la carpeta templates
+
+7 crear la vista
+la carpeta estatic, template se deben crear manualmente dentro la apps "sitio", ya django mapea las rutas 
+automaticamente
+
+python manage.py runserver

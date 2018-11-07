@@ -1,0 +1,329 @@
+
+@font-face {
+    font-family: 'arimo';
+    src: url('/static/fonts/monserrat2.woff2') format('woff');
+}
+
+
+body {
+	margin: 0;
+	font-family: sans-serif;
+	font-size: 80%;
+}
+
+header{
+	width: 100;
+	background: white;
+	padding: 2%;
+
+	/* fijar la parte superior */
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	width: 97%;
+}
+
+
+.cabecera{
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+
+	width:100%; 
+	padding:3px;
+}
+
+.cabecera-logo-mobil{
+	width:245px; 
+	float:left; 
+	position: absolute;  
+	left: 18%;
+}
+
+.cabecera-menu-mobil{
+	width:100%;  
+	float:right; 
+	position: absolute;  
+	top: 700%; 
+	left: 82%;
+}
+
+
+#btn-menu {
+	/* desaparecer el check del menu*/
+	display: none;	
+}
+
+
+
+/* Movimiento del Mouse CSS */
+header label:hover {
+	cursor: pointer;
+    /* Efecto sombreado sobre el menu */
+ 
+}
+
+	header label {
+		display:  block;
+	}
+
+	.menu {
+		/*con el posicion absolute para que se salga el menu web*/
+		display: none;
+		position: absolute;
+		background: #36b347; 
+		top: 30px;
+		width: 100%;
+		/* efecto de velocidad para recogida del menu*/
+		transition: all 0.1s;
+
+	
+	}
+
+	.menu ul{
+		/* cambio a columna el menu*/
+		flex-direction: column;
+		list-style: none;
+	}
+
+	.menu li{
+		/* Linea superior sobre el menu */
+	
+	}
+
+.menu li:hover{
+	cursor: pointer;
+	/* Efecto sombreado sobre el menu */
+  
+}
+
+.menu li a{
+	font-family: 'arimo';
+	font-size: 14px;	
+	display: block;
+	/* separacion vertical y horizontal de menu */
+	padding: 10px 20px;
+	color: #fff;
+	/*quita la linea de link del texto*/
+	text-decoration: none;
+}
+
+
+	.menu ul li:hover ul{
+		display: none;
+		position: static;
+	}
+
+/* https://www.youtube.com/watch?v=kEi9nXtuRJ8 */
+		/* cuando le de click */
+	#btn-menu:checked ~  .menu {
+		top: -60%;
+		display:block;
+		left: -1%;
+		width: 60%;
+
+	
+	}
+
+.menu a {
+	display: block;
+	padding:  15px 20px;
+	color: #fff;
+}
+
+.menu ul ul {
+	display: none;
+}
+
+.menu ul ul a{
+	padding: 15px 40px;
+}
+
+
+.Div-principal{
+	margin-left: 50px;
+	margin-right: 50px;
+
+}
+
+
+
+#btn-menu2:checked ~  .menu {
+		display:none;
+}
+
+
+
+
+h1{
+	font-size: 15px; 
+	text-align: center;
+}
+
+
+
+
+.banner-planes-mobil{
+	width:100%; 
+	height: 100%; 
+	float:left; position: absolute;  
+	top:21%; 
+	left: 0%;   
+	background:#f4f4f4;
+}
+
+.contenido-publicidad{
+	font-family: 'arimo';
+	width:100%; 
+	height: 100%; 
+	float:left; 
+	position: absolute;  
+	top:80%; 
+	left:0%; 
+	background:#f4f4f4;
+}
+
+.publicidad{
+	font-family: 'arimo';
+	position: absolute;
+	top: 0%; 
+	left: 25%;
+	width:50%;
+}
+
+.div-planes{
+	font-family: 'arimo';
+	float:left; 
+	position: absolute; 
+	top: 7%; 
+	left: 35%; 
+	width: 30%; 
+	height: 5%; 
+
+}
+.div-planes h1{
+	font-size: 20px;
+	color: white;
+}
+
+.publicidad-tipos-planes{
+	font-family: 'arimo';
+	float:left; 
+	position: absolute; 
+	background:white;  
+	top: 15%; 
+	left: 35%; 
+	width: 30%; 
+	height: 70%; 
+	box-sizing: border-box;
+}
+
+.publicidad-tipos-planes ul li{
+	font-size: 20px; 
+	text-align: center; 
+	list-style:none;
+}
+
+.publicidad-tipos-planes ul h4{
+	font-size: 18px; 
+	text-align: center;
+}
+.publicidad-tipos-planes ul h5{
+	color: #36b347; 
+	font-size: 13px; 
+	text-align: center;
+}
+
+.publicidad-tipos-planes ul li h9{
+    font-size: 13px;
+    text-align: justify;
+}
+
+
+.radial-out {
+	
+	border-radius: 97px 97px 97px 97px;
+	-moz-border-radius: 97px 97px 97px 97px;
+    -webkit-border-radius: 97px 97px 97px 97px;
+    border: 4px solid #36b347;
+	width: 60%;
+	float:left; 
+	position: absolute;  
+	left: 18%;
+	top: 8%;
+
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	position: relative;
+	-webkit-transition: color 300ms;
+	transition: color 300ms;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+ }
+.radial-out::before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #36b347;
+    border-radius: 100%;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition: 300ms ease-out;
+    transition: 300ms ease-out;
+  }
+
+  .radial-out:hover:before{
+    -webkit-transform: scale(2);
+    transform: scale(2);
+   }
+ .radial-out ul{
+		align-content: center;
+		text-align: center;
+ }
+ .radial-out ul li a {
+ 	text-align: center;
+ 	text-decoration: none;
+ 	color: #36b347;
+ }
+
+ .radial-out:hover  a{
+ 	color: white;
+ }
+
+/* 768 px */
+@media (max-width: 1200px){
+	.contenido-publicidad{
+		height: 140%; 
+	}
+
+	.publicidad-tipos-planes ul li h9{
+    	font-size: 12px;
+    	text-align: justify;
+	}
+	.banner-planes-mobil{
+		width:100%; 
+		height: 100%; 
+		float:left; position: absolute;  
+		top:15%; 
+		left: 0%;   
+		background:#f4f4f4;
+	}
+	.radial-out {
+		width: 70%;
+	}
+
+}
+/* libreria de hover  radial out*/
+/* http://ianlunn.github.io/Hover/ */
+/* https://codepen.io/vulchivijay/pen/KwBGjX */
+
